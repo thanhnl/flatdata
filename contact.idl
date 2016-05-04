@@ -1,0 +1,22 @@
+namespace model;
+
+table Phone {
+	phone_type: string;
+	number: string;
+}
+
+table Contact {
+    id: string;
+    first_name: string;
+	last_name: string;
+    description: string;
+	phones: [Phone];
+}
+
+table Message{
+	id: string;
+	contacts: [Contact];
+	receivers: [string];
+}
+
+root_type Message;
