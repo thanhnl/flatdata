@@ -119,10 +119,11 @@ func unFlatPhone(contactBuf *model.Contact) []Phone {
 // unFlatContact return Contact slice
 func unFlatContact(msgBuf *model.Message) []Contact {
 	var contacts = []Contact{}
-	var contact = Contact{}
+	var contact Contact
 	contactBuf := new(model.Contact)
 	for i := 0; i < msgBuf.ContactsLength(); i++ {
 		if msgBuf.Contacts(contactBuf, i) {
+			contact = Contact{}
 			contact.Id = string(contactBuf.Id())
 			contact.Description = string(contactBuf.Description())
 			contact.FirstName = string(contactBuf.FirstName())

@@ -27,7 +27,7 @@ func main() {
 	var msg flatdata.Message
 	for i := 0; i < len(Messages); i++ {
 		buf = flatdata.FlatMsg(Messages[i])
-		fmt.Println("Msg: ", Messages[i])
+		fmt.Println("Msg   :", Messages[i])
 		msg = flatdata.UnFlatMsg(buf)
 		fmt.Printf("Unflat: %v \n\n", msg)
 	}
